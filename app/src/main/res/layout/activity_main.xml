@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/margin_bottom"
+    android:orientation="vertical"
+    tools:context="br.com.ottoboni.imagelibs.MainActivity">
+
+    <TextView
+        android:id="@+id/label_picasso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/picasso"
+        android:textSize="@dimen/lib_name_text_size"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/holder_picasso"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/label_glide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/glide"
+        android:textSize="@dimen/lib_name_text_size"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/holder_glide"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/label_fresco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fresco"
+        android:textSize="@dimen/lib_name_text_size"
+        android:textStyle="bold"
+        />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/holder_fresco"
+        android:layout_width="@dimen/img_width"
+        android:layout_height="@dimen/image_height"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        fresco:viewAspectRatio="1.33"
+        fresco:placeholderImage="@drawable/placeholder_img"
+        />
+
+</LinearLayout>
