@@ -1,16 +1,12 @@
 package br.com.ottoboni.imagelibs;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.icu.util.TimeUnit;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.TimingLogger;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,9 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
-import com.bumptech.glide.request.transition.Transition;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.drawee.controller.ControllerListener;
@@ -33,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String URL = "https://goo.gl/5qHdB8";
     public static final String TAG_LOGGER = "ImageLoad";
+    private static final double MILI_TO_SECCONDS = 1000000000.0;
 
     private ImageView holderPicasso;
     private ImageView holderGlide;
@@ -67,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess() {
                     picassoTime = System.nanoTime() - picassoTime;
-                    Log.d(TAG_LOGGER, "Picasso time: " + (picassoTime/1000000000.0) + " secconds");
+                    Log.d(TAG_LOGGER, "Picasso time: " + (picassoTime/MILI_TO_SECCONDS) + " secconds");
                 }
 
                 @Override
@@ -92,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                     glideTime = System.nanoTime() - glideTime;
-                    Log.d(TAG_LOGGER, "Glide time: " + (glideTime/1000000000.0) + " secconds");
+                    Log.d(TAG_LOGGER, "Glide time: " + (glideTime/MILI_TO_SECCONDS) + " secconds");
                     return false;
                 }
             })
@@ -141,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
             frescoTime = System.nanoTime() - frescoTime;
 
-            Log.d(TAG_LOGGER, "Fresco time: " + (frescoTime/1000000000.0) + " secconds");
+            Log.d(TAG_LOGGER, "Fresco time: " + (frescoTime/ MILI_TO_SECCONDS) + " secconds");
         }
     };
 
