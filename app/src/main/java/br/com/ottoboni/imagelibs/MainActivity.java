@@ -1,5 +1,6 @@
 package br.com.ottoboni.imagelibs;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -23,6 +24,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String URL = "https://goo.gl/5qHdB8";
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         holderPicasso = (ImageView) findViewById(R.id.holder_picasso);
         holderGlide = (ImageView) findViewById(R.id.holder_glide);
         holderFresco = (SimpleDraweeView) findViewById(R.id.holder_fresco);
+
+        Picasso.with(getApplicationContext()).setIndicatorsEnabled(true);
 
         loadImages();
         setListeners();
@@ -110,21 +115,27 @@ public class MainActivity extends AppCompatActivity {
         holderPicasso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Clicou Picasso", Toast.LENGTH_SHORT).show();
+                Intent picassoIntent = new Intent(getApplicationContext(), ListActivity.class);
+                picassoIntent.putExtra(ListActivity.LIB_TYPE, ListActivity.PICASSO);
+                startActivity(picassoIntent);
             }
         });
 
         holderGlide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Clicou Glide", Toast.LENGTH_SHORT).show();
+                Intent glideIntent = new Intent(getApplicationContext(), ListActivity.class);
+                glideIntent.putExtra(ListActivity.LIB_TYPE, ListActivity.GLIDE);
+                startActivity(glideIntent);
             }
         });
 
         holderFresco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Clicou no Fresco", Toast.LENGTH_SHORT).show();
+                Intent frescoIntent = new Intent(getApplicationContext(), ListActivity.class);
+                frescoIntent.putExtra(ListActivity.LIB_TYPE, ListActivity.FRESCO);
+                startActivity(frescoIntent);
             }
         });
     }

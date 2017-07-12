@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+    >
+
+    <ImageView
+        android:id="@+id/picasso_item_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/placeholder_img"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/background_description"
+        android:src="@drawable/text_item_background"
+        />
+
+    <TextView
+        android:id="@+id/picasso_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/text_item_bottom"
+        android:layout_marginEnd="@dimen/text_item_horizontal"
+        android:layout_marginStart="@dimen/text_item_horizontal"
+        android:text="@string/picasso"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_item_size"
+        />
+
+</RelativeLayout>

@@ -56,10 +56,10 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/holder_fresco"
         android:layout_width="@dimen/img_width"
-        android:layout_height="@dimen/image_height"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        fresco:viewAspectRatio="1.33"
+        fresco:viewAspectRatio="1.77"
         fresco:placeholderImage="@drawable/placeholder_img"
         />
 

@@ -3,4 +3,6 @@
     <string name="fresco">Fresco</string>
     <string name="glide">Glide</string>
     <string name="picasso">Picasso</string>
+    <string name="image_description">Image retrieved from internet</string>
+    <string name="background_description">Simple background black for text</string>
 </resources>
